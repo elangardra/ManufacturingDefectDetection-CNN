@@ -3,15 +3,6 @@
 
 The objective of this project is to develop an accurate and efficient defect detection system for industrial products undergoing casting processes, harnessing the power of deep learning and specifically Convolutional Neural Networks (CNNs). This study aims to explore and compare various optimization algorithms, such as SGD, RMSProp, and Adam, to optimize the accuracy and performance of CNN models in defect detection. By analyzing the performance of each algorithm, the project seeks to determine the best approach to tackle the dynamic and complex challenges of quality inspection in the casting industry context, with a focus on enhancing accuracy and efficiency in defect detection.
 
-## Dataset
-
-
-| Source      | Kaggle (URL: [casting product image data for quality inspection](https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product)) |
-|-------------|----------------------------------------------------------------------------------------------------------------------------|
-| Format      | Images (JPEG format)                                                                                                      |
-| Total Data  | 7348 image data                                                                                                            |
-| Categories  | Def and Ok                                                                                                                 |
-| Image Size  | 512x512 grayscale  
 
 ## Dataset
 
@@ -66,7 +57,7 @@ These metrics illustrate the model's performance in classifying both classes, de
 
 ## Miss Classified
 ![Model Architecture](https://github.com/elangardra/ManufacturingDefectDetection-CNN/blob/main/archive/4.png)
-Results from Figure 5.6 show that the model using Adam optimizer for 50 epochs struggled with predictions. It misclassified 3 out of 715 test data instances, all of which were labeled 'Ok' but predicted as 'Defective'
+Results show that the model using Adam optimizer for 50 epochs struggled with predictions. It misclassified 3 out of 715 test data instances, all of which were labeled 'Ok' but predicted as 'Defective'
 
 ## Summary
 
