@@ -29,32 +29,23 @@ A crucial step in the model development and training process is proper data prep
   
 ## Model Architecture
 The CNN architecture is specifically designed to detect defects in casting industrial products. It consists of Convolutional, MaxPooling, Flatten, and Dense layers.
-```python
-model_architecture = Sequential([
-    Conv2D(filters=16, kernel_size=(3, 3), strides=2, activation="relu", padding="same", input_shape=(300, 300, 1)),
-    MaxPooling2D(pool_size=(2, 2), strides=2),
-    Conv2D(filters=32, kernel_size=(3, 3), activation="relu", padding="same"),
-    MaxPooling2D(pool_size=(2, 2), strides=2),
-    Conv2D(filters=64, kernel_size=(3, 3), activation="relu", padding="same"),
-    MaxPooling2D(pool_size=(2, 2), strides=2),
-    Conv2D(filters=128, kernel_size=(3, 3), activation="relu", padding="same"),
-    MaxPooling2D(pool_size=(2, 2), strides=2),
-    Flatten(),
-    Dense(128, activation='relu'),
-    Dense(1, activation="sigmoid")
-])
-optimizers = [
-    Adam(),
-    RMSprop(),
-    SGD()
-]
+| Layer          | Output Shape | Parameter  |
+|----------------|--------------|------------|
+| Conv2D (16)    | (None, 150, 150, 16) | 160   |
+| MaxPooling2D   | (None, 75, 75, 16)   | 0     |
+| Conv2D (32)    | (None, 75, 75, 32)   | 4640  |
+| MaxPooling2D   | (None, 37, 37, 32)   | 0     |
+| Conv2D (64)    | (None, 37, 37, 64)   | 18496 |
+| MaxPooling2D   | (None, 18, 18, 64)   | 0     |
+| Conv2D (128)   | (None, 18, 18, 128)  | 73856 |
+| MaxPooling2D   | (None, 9, 9, 128)    | 0     |
+| Flatten        | (None, 10368)        | 0     |
+| Dense (128)    | (None, 128)          | 1327232|
+| Dense (1)      | (None, 1)            | 129   |
+|                |                      |        |
+| Total Parameter|                      | 1424513  |
+| Trainable Parameter|                   | 1424513  |
 
-for optimizer in optimizers:
-    model_architecture.compile(optimizer=optimizer, loss="binary_crossentropy", metrics=["accuracy"])
-model_architecture.summary()
-```
-
-![Model Architecture](https://github.com/elangardra/ManufacturingDefectDetection-CNN/blob/main/archive/1.png)
 ## Optimizer Comparison: Training Results 
 Based on the experimental results, the Adam optimizer at epoch 50 demonstrates superior performance with the highest accuracy and lowest loss on both training and validation data.
 ![Model Architecture](https://github.com/elangardra/ManufacturingDefectDetection-CNN/blob/main/archive/2.png)
