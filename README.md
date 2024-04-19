@@ -13,8 +13,20 @@ The objective of this project is to develop an accurate and efficient defect det
 | Format      | Images (JPEG format)                                                                                                      |
 | Total Data  | 7348 image data                                                                                                            |
 | Categories  | Def and Ok                                                                                                                 |
-| Image Size  | 512x512 grayscale  
+| Image Size  | 512x512 grayscale  ]
 
+## Data Preparation
+A crucial step in the model development and training process is proper data preparation. In this study, images are processed by resizing, converting them to grayscale, normalizing pixel values, and adjusting labe
+| Preprocessing   | Deskripsi                 |
+|-----------------|---------------------------|
+| Resizing        | 300x300 piksel           |
+| Color Mode      | grayscale                 |
+| Normalisasi     | 1/255                     |
+| Label Kelas     | 'ok' = 0 dan 'def' = 1   |
+| Batch Size      | 32                        |
+| Pengaturan Seed | 0                         |
+| Class Mode      | Binary                    |
+  
 ## Model Architecture
 The CNN architecture is specifically designed to detect defects in casting industrial products. It consists of Convolutional, MaxPooling, Flatten, and Dense layers.
 ```python
